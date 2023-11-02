@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Event detail page</h1>
+  <p>ID: {{ event.id }}</p>
+  <p>title: {{ event.title }}</p>
+  <p>Description: {{ event.description }}</p>
+  <p>Begin_at: {{ event.begin_at }}</p>
+  <p>End_at: {{ event.end_at }}</p>
+  <p>Max_users {{ event.max_users }}</p>
+  <p>Active: {{ "Yes" if event.is_active else "No" }}</p>
+  <a href="{{ url_for('get_events') }}">Return to Events</a>
+{% endblock %}

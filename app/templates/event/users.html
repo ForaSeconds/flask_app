@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Users for Event "{{ event.title }}"</h1>
+  <p>Event ID: {{ event.id }}</p>
+  <ul>
+    {% for user_info in users_info %}
+      <li>ID: {{ user_info.id }}, Username: {{ user_info.username }}</li>
+    {% endfor %}
+  </ul>
+  <a href="{{ url_for('get_events') }}">Return to Events</a>
+{% endblock %}

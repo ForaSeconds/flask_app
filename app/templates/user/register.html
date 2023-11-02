@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Register</h1>
+  <form method="POST">
+
+    <div class="form-group">
+      {{ form.first_name.label(class="form-label") }}
+      {{ form.first_name(class="form-control") }}
+      </div>
+
+
+    <div class="form-group">
+      {{ form.last_name.label(class="form-label") }}
+      {{ form.last_name(class="form-control") }}
+    </div>
+
+    <div class="form-group">
+      {{ form.username.label(class="form-label") }}
+      {{ form.username(class="form-control") }}
+    </div>
+
+    <div class="form-group">
+      {{ form.password.label(class="form-label") }}
+      {{ form.password(class="form-control") }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  {% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+  {% endif %}
+{% endblock %}

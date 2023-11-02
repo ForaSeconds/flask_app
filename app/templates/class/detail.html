@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Object Detail</h1>
+    <ul>
+        {% if item.username %}
+            <h2>User Information:</h2>
+            <p>Id: {{ item.id }}</p>
+            <p>First and Lastname: {{ item.first_name }} {{ item.last_name }}</p>
+            <p>Username: {{ item.username }}</p>
+        {% endif %}
+
+        {% if item.title %}
+            <h2>Event Information:</h2>
+            <p>Title: {{ item.title }}</p>
+            <p>Description: {{ item.description }}</p>
+            <p>Begin Date: {{ item.begin_at }}</p>
+            <p>End Date: {{ item.end_at }}</p>
+            <p>Max users: {{ item.max_users }}</p>
+            <p>Status: {{ item.is_active }}</p>
+            <p>created_by: {{ item.created_by }}</p>
+        {% endif %}
+    </ul>
+{% endblock %}
